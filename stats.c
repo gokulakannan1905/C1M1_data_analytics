@@ -9,13 +9,14 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief This file contains all the function definitions 
  *
- * <Add Extended Description Here>
+ * This file contains all the function definitions for the functions declared in the header
+ * file "stats.h"
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Gokulakannan A
+ * @date 09/05/2023
  *
  */
 
@@ -27,7 +28,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -37,7 +38,38 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
-
+  
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(unsigned char* array,int size){
+  //todo
+}
+
+void print_array(unsigned char* array,int size){
+  //todo
+}
+
+double find_median(unsigned char* array,int size){
+  //todo
+  return 1.0;
+}
+
+double find_mean(unsigned char* array,int size){
+  //todo
+  return 1.0;
+}
+
+unsigned char find_maximum(unsigned char* array,int size){
+  //todo
+  return 1;
+}
+
+unsigned char find_minimum(unsigned char* array,int size){
+  //todo
+  return 1;
+}
+
+void sort_array(unsigned char* array,int size){
+  //todo
+}

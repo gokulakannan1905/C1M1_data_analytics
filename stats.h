@@ -12,7 +12,8 @@
  * @file stats.h 
  * @brief Contains Declarations and Documentation of the various functions in the project
  *
- * This file contains function prototypes and brief documentation for each functions.
+ * This file contains function prototypes and brief documentation for each functions along
+ * with their input parameters and output parameter.
  *
  * @author Gokulakannan A
  * @date 09/05/2023
@@ -21,20 +22,94 @@
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
+/**
+ * @brief prints all the statistics of the given array
+ *
+ * This function works by calling other function declared in this file by simply passing the 
+ * given input array and size of the array as arguments to calling functions.
+ *
+ * @param array - unsigned char array
+ * @param size - size of the array in int
+ *
+ * @return void
+ */
+ void print_statistics(unsigned char* array,int size);
+
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief prints the given array to the console
  *
- * <Add Extended Description Here>
+ * using printf function this function displays the contents of the array to the stdout console
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param array - unsigned char array
+ * @param size - size of the array in int
  *
- * @return <Add Return Informaiton here>
+ * @return void
  */
+ void print_array(unsigned char* array,int size);
 
 
+/**
+ * @brief finds the median value from the array
+ *
+ * finds the median value from the array
+ *
+ * @param array - unsigned char array
+ * @param size - size of the array in int
+ *
+ * @return median value of the given array items
+ */
+ double find_median(unsigned char* array,int size);
+
+
+/**
+ * @brief finds the mean value from the array
+ *
+ * finds the mean value from the array
+ *
+ * @param array - unsigned char array
+ * @param size - size of the array
+ *
+ * @return mean value of the given array items
+ */
+ double find_mean(unsigned char* array,int size);
+
+
+/**
+ * @brief finds the maximum value from the array
+ *
+ * Finds the maximum value from the array using a for loop and comparison operator
+ *
+ * @param array - unsigned char array
+ * @param size - size of the array
+ *
+ * @return maximum value from the given array
+ */
+ unsigned char find_maximum(unsigned char* array,int size);
+
+
+/**
+ * @brief finds the minimum value from the array
+ *
+ * Finds the minimum value from the array using a for loop and comparison operator
+ *
+ * @param array - unsigned char array
+ * @param size - size of the array
+ *
+ * @return minimum value from the given array
+ */
+ unsigned char find_minimum(unsigned char* array,int size);
+
+
+/**
+ * @brief sorts the given array in descending order
+ *
+ * This function uses quick sort to sort the array items in descending order
+ *
+ * @param array - unsigned char array
+ * @param size - size of the array
+ *
+ * @return void
+ */
+ void sort_array(unsigned char* array,int size);
 #endif /* __STATS_H__ */
