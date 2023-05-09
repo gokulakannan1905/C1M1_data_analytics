@@ -42,6 +42,7 @@ int main() {
   print_statistics(test,SIZE);
   sort_array(test,SIZE);
   print_array(test,SIZE);
+  
 }
 
 /* Add other Implementation File Code Here */
@@ -53,9 +54,11 @@ void print_statistics(unsigned char* array,int size){
 }
 
 void print_array(unsigned char* array,int size){
+  printf("Array                           : [");
   for(int i=0;i<size;i++){
-    printf("%d ",array[i]);
+    printf("%d, ",array[i]);
   }
+  printf("]\n");
 }
 
 unsigned char find_median(unsigned char* array,int size){
