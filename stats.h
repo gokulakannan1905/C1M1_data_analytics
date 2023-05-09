@@ -59,7 +59,7 @@
  *
  * @return median value of the given array items
  */
- double find_median(unsigned char* array,int size);
+ unsigned char find_median(unsigned char* array,int size);
 
 
 /**
@@ -112,4 +112,14 @@
  * @return void
  */
  void sort_array(unsigned char* array,int size);
+
+ //helper fn for quick sort function
+ static int pivot(unsigned char*,int,int);
+ 
+ //helper fn for quick sort function
+ static void swap(unsigned char*,int,int);
+
+ //actual quick sort function to sort 
+ static void quickSort(unsigned char*,int,int);
+
 #endif /* __STATS_H__ */
