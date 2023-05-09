@@ -21,7 +21,6 @@
  */
 #ifndef __STATS_H__
 #define __STATS_H__
-
 /**
  * @brief prints all the statistics of the given array
  *
@@ -34,7 +33,7 @@
  *
  * @return void
  */
- void print_statistics(unsigned char* array,int size);
+ void print_statistics(const unsigned char* array,int size);
 
 
 /**
@@ -47,7 +46,7 @@
  *
  * @return void
  */
- void print_array(unsigned char* array,int size);
+ void print_array(const unsigned char* array,int size);
 
 
 /**
@@ -61,7 +60,7 @@
  *
  * @return median value of the given array items
  */
- unsigned char find_median(unsigned char* array,int size);
+ unsigned char find_median(const unsigned char* array,int size);
 
 
 /**
@@ -75,7 +74,7 @@
  *
  * @return mean value of the given array items
  */
- double find_mean(unsigned char* array,int size);
+ double find_mean(const unsigned char* array,int size);
 
 
 /**
@@ -89,7 +88,7 @@
  *
  * @return maximum value from the given array as unsigned char
  */
- unsigned char find_maximum(unsigned char* array,int size);
+ unsigned char find_maximum(const unsigned char* array,int size);
 
 
 /**
@@ -103,7 +102,7 @@
  *
  * @return minimum value from the given array as unsigned char
  */
- unsigned char find_minimum(unsigned char* array,int size);
+ unsigned char find_minimum(const unsigned char* array,int size);
 
 
 /**
@@ -118,52 +117,5 @@
  * @return void
  */
  void sort_array(unsigned char* array,int size);
-
-
-/**
- * @brief helper function for quick sort algorithm
- *
- * This function takes the array, start index and end index as input.It selects 1st number
- * as pivot and places that number at the correct position and returns that index. numbers 
- * less than this pivot value is placed at left side of the pivot index and numbers larger than this
- * pivot is placed at right size of the pivot index.
- *
- * @param array - unsigned char array
- * @param start - start index of the array in int
- * @param end - end index of the array in int
- *
- * @return pivot index of the number in int
- */
- static int pivot(unsigned char* array,int start,int end);
- 
-
-/**
- * @brief another helper function for quick sort algorithm
- *
- * This function takes array and two indexes of that array and swap the value at those indexes
- *
- * @param array - unsigned char array
- * @param i - index of the array in int
- * @param j - index of the array in int
- *
- * @return void
- */
- static void swap(unsigned char* array,int i,int j);
-
-
-/**
- * @brief sorts the given array in ascending order
- *
- * This function uses quick sort algorithm to sort the array items in ascending order. After 
- * getting the pivot index from the helper function, the array is separated as left sub array
- * and right sub array and then recursively sorted.
- *
- * @param array - unsigned char array
- * @param start - start index of the array in int
- * @param end - end index of the array in int
- *
- * @return void
- */
- static void quickSort(unsigned char* array,int start,int end);
 
 #endif /* __STATS_H__ */

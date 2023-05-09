@@ -20,7 +20,51 @@
  *
  */
 
+/**
+ * @brief helper function for quick sort algorithm
+ *
+ * This function takes the array, start index and end index as input.It selects 1st number
+ * as pivot and places that number at the correct position and returns that index. numbers 
+ * less than this pivot value is placed at left side of the pivot index and numbers larger than this
+ * pivot is placed at right size of the pivot index.
+ *
+ * @param array - unsigned char array
+ * @param start - start index of the array in int
+ * @param end - end index of the array in int
+ *
+ * @return pivot index of the number in int
+ */
+ static int pivot(unsigned char* array,int start,int end);
 
+
+/**
+ * @brief another helper function for quick sort algorithm
+ *
+ * This function takes array and two indexes of that array and swap the value at those indexes
+ *
+ * @param array - unsigned char array
+ * @param i - index of the array in int
+ * @param j - index of the array in int
+ *
+ * @return void
+ */
+ static void swap(unsigned char* array,int i,int j);
+
+
+/**
+ * @brief sorts the given array in ascending order
+ *
+ * This function uses quick sort algorithm to sort the array items in ascending order. After 
+ * getting the pivot index from the helper function, the array is separated as left sub array
+ * and right sub array and then recursively sorted.
+ *
+ * @param array - unsigned char array
+ * @param start - start index of the array in int
+ * @param end - end index of the array in int
+ *
+ * @return void
+ */
+ static void quickSort(unsigned char* array,int start,int end);
 
 #include <stdio.h>
 #include <string.h>
@@ -46,14 +90,14 @@ int main() {
 }
 
 /* Add other Implementation File Code Here */
-void print_statistics(unsigned char* array,int size){
+void print_statistics(const unsigned char* array,int size){
   printf("Minimum value of the given array: %d\n",find_minimum(array,size));  
   printf("Maximum value of the given array: %d\n",find_maximum(array,size));  
   printf("Mean value of the given array   : %.2lf\n",find_mean(array,size));
   printf("Median value of the given array : %d\n",find_median(array,size));
 }
 
-void print_array(unsigned char* array,int size){
+void print_array(const unsigned char* array,int size){
   printf("Array                           : [");
   for(int i=0;i<size;i++){
     printf("%d, ",array[i]);
@@ -61,7 +105,7 @@ void print_array(unsigned char* array,int size){
   printf("]\n");
 }
 
-unsigned char find_median(unsigned char* array,int size){
+unsigned char find_median(const unsigned char* array,int size){
   unsigned char sorted_array[size];
   memcpy(sorted_array,array,size);
   sort_array(sorted_array,size);
@@ -76,7 +120,7 @@ unsigned char find_median(unsigned char* array,int size){
   }
 }
 
-double find_mean(unsigned char* array,int size){
+double find_mean(const unsigned char* array,int size){
   int sum = 0;
   for(int i=0;i<size;i++){
     sum+= array[i];
@@ -84,7 +128,7 @@ double find_mean(unsigned char* array,int size){
   return (double)sum/size;
 }
 
-unsigned char find_maximum(unsigned char* array,int size){
+unsigned char find_maximum(const unsigned char* array,int size){
   unsigned char max = array[0];
   for(int i=1;i<size;i++){
     if(array[i] > max){
@@ -94,7 +138,7 @@ unsigned char find_maximum(unsigned char* array,int size){
   return max;
 }
 
-unsigned char find_minimum(unsigned char* array,int size){
+unsigned char find_minimum(const unsigned char* array,int size){
   unsigned char min = array[0];
   for(int i=1;i<size;i++){
     if(array[i] < min){
