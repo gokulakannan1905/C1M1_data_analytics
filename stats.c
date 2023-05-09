@@ -105,7 +105,13 @@ unsigned char find_minimum(unsigned char* array,int size){
 }
 
 void sort_array(unsigned char* array,int size){
+  unsigned char reversed_array[size];
   quickSort(array,0,size-1);
+  int index = 0;
+  for(int i = size-1;i>=0;i--){
+    reversed_array[index++] = array[i];
+  }
+  memcpy(array,reversed_array,size);
 }
 
 static void swap(unsigned char* array,int i,int j){
